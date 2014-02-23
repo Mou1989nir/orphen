@@ -1,0 +1,7 @@
+ <?php
+            foreach($this->paginator as $user){
+                echo $user['login'];
+            }
+            
+     echo '<br/>'.$this->paginationControl($this->paginator,'Sliding','pagination.phtml');
+ ?>

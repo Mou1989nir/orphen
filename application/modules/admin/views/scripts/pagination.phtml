@@ -1,0 +1,39 @@
+<?php 
+
+//if( $this->pageCount > 5){
+    if(isset($this->previous)){
+        echo '<a href ="'.$this->url(array('page' => $this->first)).'"> &lt;&lt; </a> | ';
+        }else {
+        	echo '&lt;&lt;';
+    }
+    if(isset($this->previous)){
+    	echo '<a href ="'.$this->url(array('page' => $this->previous)).'"> &lt; </a> | ';
+    }else {
+    		echo ' | &lt; | ';
+    }
+    
+    
+    foreach ($this->pagesInRange as $page){
+        if($this->current != $page){
+            echo '<a href ="'.$this->url(array('page' => $page)).'">'.$page.'</a> | ';
+        }else {
+            echo $page.' | ';
+        }
+    }
+    if(isset($this->next)){
+    	echo '<a href ="'.$this->url(array('page' => $this->next)).'"> &gt; </a> | ';
+    }else {
+    		echo '&gt; | ';
+    }
+    
+    if(isset($this->next)){
+    	echo '<a href ="'.$this->url(array('page' => $this->last)).'"> &gt;&gt; </a> ';
+    }else {
+    		echo '&gt;&gt;';
+    }
+
+?>
+<?php 
+    echo $this->current .' / '. $this->pageCount; 
+//}    
+?>

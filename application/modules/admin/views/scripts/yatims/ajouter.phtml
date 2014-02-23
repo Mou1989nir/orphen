@@ -1,0 +1,20 @@
+<?php $this->headLink()->prependStylesheet($this->baseUrl().'/css/jquery-ui.css');?>
+<a href="<?=$this->url(array('module'=>'admin','controller'=>'yatims','action'=>'index'))?>">لائحة الأيتام</a><br>
+<!-- <form action="<?php// echo $this->url(array('action'=>'ajouter')); ?>" method="post">
+    <table>
+        <tr>
+            <td><input type="text" name="lieuNaissance"></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="numYatim"> رقم اليتيم </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Save" /></td>
+        </tr>
+    </table>
+</form>
+-->
+<?php
+    echo $this->form; 
+    
+?>

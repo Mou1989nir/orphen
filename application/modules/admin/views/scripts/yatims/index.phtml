@@ -1,0 +1,34 @@
+<a href="<?=$this->url(array('module'=>'admin','controller'=>'yatims','action'=>'ajouter'))?>">أضف يتيم</a>
+
+<?php if($this->yatims):?>
+<div>
+    <table border="1" style="width:100%;">    
+        <tr>
+            <th>رقم اليتيم</th>
+            <th>الاسم و النسب</th>
+            <th>الصورة</th>
+            <th>عمليات</th>
+        </tr>
+        <tr>
+            <?php
+            
+            foreach($this->yatims as $row){
+            ?>
+        </tr>
+        <tr>
+            <td><?php echo $row['num_yatim'];?></td>
+            <td><?php echo $row['prenom'].' '.$row['nom'];?></td>
+            <td><img src="<?php echo $this->baseUrl().'/uploads/yatims/'. $row['photo']; ?>" width="140px"></td>
+             <td>
+                <a href=" <?php echo $this->url(array('module'=>'admin','controller'=>'statuts','action'=>'details','id'=>$row['id'])); ?>">المزيد</a> 
+                <a href="<?php echo $this->url(array('module'=>'admin','controller'=>'statuts','action'=>'modifier','id'=>$row['id'])); ?>">تعديل</a> 
+                <a href=" <?php echo $this->url(array('module'=>'admin','controller'=>'statuts','action'=>'supprimer','id'=>$row['id'])); ?>">حذف</a>  
+            </td>
+        </tr>
+            <?php
+            }
+            ?>
+    </table>
+    <?php echo '<br/>'.$this->paginationControl($this->yatims,'Sliding','pagination.phtml'); ?>
+</div>
+<?php endif;?>          

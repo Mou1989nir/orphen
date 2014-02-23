@@ -1,0 +1,49 @@
+<form action="<?php $this->element->getAction();?>" method="post" enctype="multipart/form-data" >
+    <table id="yatimForm">
+        <tr>
+            <td><?php echo $this->element->getElement('numYatim');?></td>
+        </tr>
+        <tr>
+            <td><?php echo $this->element->getElement('dateInscription');?></td>
+        </tr>
+        <tr>
+            <td><?php echo $this->element->getElement('famille');?><a href="<?=$this->url(array('module'=>'admin','controller'=>'familles','action'=>'ajouter'))?>">أضف عائلة</a></td>
+            
+        </tr>
+        <tr>
+            <td><?php echo $this->element->getElement('prenom');?></td>
+            <td><?php echo $this->element->getElement('nom');?></td> 
+        </tr>
+        <tr>
+            <td><?php echo $this->element->getElement('photo');?></td>
+        </tr>
+        <tr>
+            <td><?php echo $this->element->getElement('sexe');?></td>
+        </tr>
+        <tr>
+            <td><?php echo $this->element->getElement('type');?></td>
+        </tr>
+        <tr>
+            <td><?php echo $this->element->getElement('dateNaissance');?></td>
+            <td><?php echo $this->element->getElement('lieuNaissance');?></td>
+        </tr>
+        <tr>
+            <td><?php echo $this->element->getElement('cin');?></td>
+        </tr>
+         <tr>
+            <td><?php echo $this->element->getElement('telephone');?></td>
+        </tr>
+         <tr>
+            <td><?php echo $this->element->getElement('taille');?></td>
+            <td><?php echo $this->element->getElement('pointure');?></td>
+        </tr>
+         <tr>
+            <td><?php echo $this->element->getElement('etatSante');?><a href="<?=$this->url(array('module'=>'admin','controller'=>'yatims','action'=>'ajouteretat'))?>">أضف حالة صحية</a></td>
+        </tr>
+        <tr>
+            <td><?php echo $this->element->getElement('ajouter');?></td>
+        </tr>
+    </table>
+</form>
+
+

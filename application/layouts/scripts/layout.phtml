@@ -1,0 +1,75 @@
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <?php echo $this->headTitle();?>
+    <?php echo $this->headMeta(); ?>
+    
+    <?php echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/style.css');
+                               // ->prependStylesheet($this->baseUrl().'/css/jquery-ui.css');
+                                //->prependStylesheet(' http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css');
+	?>
+  
+   <?php echo $this->headScript()->appendFile($this->baseUrl().'/js/jquery-1.9.1.js')
+                                ->appendFile($this->baseUrl().'/js/jquery-ui.js')
+                                ->appendFile($this->baseUrl().'/js/code.js');
+	?>
+</head>
+<body>
+	<div class="container">
+        <div id="header">
+            <div class="logo"></div>
+            <div class="head-left"></div>
+            <div class="date">
+                     اليوم - <?php $date = new Default_Model_DateImpl();
+                              echo $date->arDate();
+                        ?>
+                </div>
+            <div class="clear">&nbsp;</div>
+        </div>
+		<div class="clear">&nbsp;</div>
+        <div class="bodyContent">
+            <div class="sidebar">
+            
+                        <?php 
+                            if(Zend_Auth::getInstance()->getStorage()->read() != null){
+                        ?>
+                        <div class="connectedUser">
+                            مرحبا بك <a href=""><b>
+                        <?php 
+                               echo Zend_Auth::getInstance()->getStorage()->read()->role;
+                        ?>
+                           </b></a> 
+                           </div>
+                        <?php          
+                            }
+                        ?>
+                
+                <div class="block">
+                   <?php echo $this->navigation(); ?>
+                </div>
+            </div>
+            <div class="content">
+                
+                <div class="title"><?php echo 'hello'.$this->titre;?></div>
+                <div class="cont"><?php echo $this->layout()->content; ?></div>
+            </div>
+            
+			<div class="clear">&nbsp;</div>
+		</div>
+   		<div class="footer">
+        	<ul class="footer-links">
+				<li><a href="<?php echo $this->baseUrl(); ?>"> الرئيسية </a>l</li> 
+				<li><a href="<?php echo $this->baseUrl().'/admin'; ?>"> الإدارة </a></li>
+			</ul>
+			<div class="copy">
+				<p> كافة الحقوق محفوظة لجمعية السلام للإنماء الاجتماعي - فرع اليوسفية © 2013 | الإصدار 1.0</p>
+			</div>
+		</div>
+		<!--End Footer Section -->	
+		<div class="clear">&nbsp;</div>
+		 
+	</div>
+	<!--End Main Section -->
+</body>
+</html>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<nav>
+		<index>
+			<label>الصفحة الرئيسية</label>
+			<module>default</module>
+			<controller>index</controller>
+			<action>index</action>
+			<resource>default:index</resource>
+			<privilege>index</privilege>
+		</index>
+		<indexAdmin>
+			<label>لوحة التحكم</label>
+			<module>admin</module>
+			<controller>index</controller>
+			<action>index</action>
+			<resource>admin:index</resource>
+			<privilege>index</privilege>
+		</indexAdmin>
+		<login>
+			<label>تسجيل الدخول</label>
+			<module>default</module>
+			<controller>authentification</controller>
+			<action>login</action>
+			<resource>default:authentification</resource>
+			<privilege>login</privilege>
+		</login>
+		
+		<adherents>
+			<label>المنخرطين</label>
+			<module>admin</module>
+			<controller>adherents</controller>
+			<action>index</action>
+			<resource>admin:adherents</resource>
+			<privilege>index</privilege>
+		</adherents>
+		<kafala>
+			<label>الكفالة</label>
+			<module>admin</module>
+			<controller>kafala</controller>
+			<action>index</action>
+			<resource>admin:kafala</resource>
+			<privilege>index</privilege>
+		</kafala>
+		<tresorie>
+			<label>المالية</label>
+			<module>admin</module>
+			<controller>tresorie</controller>
+			<action>index</action>
+			<resource>admin:tresorie</resource>
+			<privilege>index</privilege>
+		</tresorie>
+		<projets>
+			<label>المشاريع</label>
+			<module>admin</module>
+			<controller>projets</controller>
+			<action>index</action>
+			<resource>admin:projets</resource>
+			<privilege>index</privilege>
+		</projets>
+		<materiel>
+			<label>الممتلكات</label>
+			<module>admin</module>
+			<controller>materiels</controller>
+			<action>index</action>
+			<resource>admin:materiels</resource>
+			<privilege>index</privilege>
+		</materiel>
+		<sang>
+			<label>التبرع بالدم</label>
+			<module>admin</module>
+			<controller>sang</controller>
+			<action>index</action>
+			<resource>admin:sang</resource>
+			<privilege>index</privilege>
+		</sang>
+		<users>
+			<label>اعدادات الأعضاء</label>
+			<module>admin</module>
+			<controller>users</controller>
+			<action>index</action>
+			<resource>admin:users</resource>
+			<privilege>index</privilege>
+		</users>
+		<preferences>
+			<label>اعدادت</label>
+			<module>admin</module>
+			<controller>preferences</controller>
+			<action>index</action>
+			<resource>admin:preferences</resource>
+			<privilege>index</privilege>
+		</preferences>
+		
+		<logout>
+			<label>تسجيل الخروج</label>
+			<module>default</module>
+			<controller>authentification</controller>
+			<action>logout</action>
+			<resource>default:authentification</resource>
+			<privilege>logout</privilege>
+		</logout>
+	</nav>
+</config>

@@ -1,0 +1,43 @@
+<a href="<?=$this->url(array('module'=>'admin','controller'=>'statuts','action'=>'ajouter'))?>">أضف صفة</a>
+
+<?php if($this->statuts):?>
+<div>
+    <table border="1" style="width:100%;">    
+        <tr>
+            <th>الصفة</th>
+            <th>الصفة الرئيسية</th>
+            <th>الإدارة</th>
+            <th>عمليات</th>
+        </tr>
+        <tr>
+            <?php
+            
+            foreach($this->statuts as $row){
+            ?>
+        </tr>
+        <tr>
+            <td><?php echo $row['statut'];
+                ?></td>
+            
+            <?php $parents = new Admin_Model_DbTable_GestStatuts();
+                  $parent = $parents->getStatutById($row['idparent']);
+                 
+            ?>
+            <td><?php if($parent == null)
+                        echo '';
+                      else
+                        echo $parent->statut; ?></td>
+            <td><?php echo $row['direction'];  ?></td>
+             <td>
+                <a href="<?php echo $this->url(array('module'=>'admin','controller'=>'statuts','action'=>'modifier','id'=>$row['id'])); ?>">تعديل</a> 
+                <a href=" <?php echo $this->url(array('module'=>'admin','controller'=>'statuts','action'=>'supprimer','id'=>$row['id'])); ?>">حذف</a>  
+            </td>
+        </tr>
+            <?php
+            }
+            ?>
+    </table>
+    <?php echo '<br/>'.$this->paginationControl($this->statuts,'Sliding','pagination.phtml'); ?>
+</div>
+<?php endif;?>          
+    
